@@ -5,15 +5,20 @@
 	<a-scene embedded arjs='sourceType: webcam;'>
 		<a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
 		<a-marker-camera preset='hiro'></a-marker-camera>
-	</a-scene>
-
+	
 
 <!-- define your gltf asset -->
 <a-assets>
-  <a-asset-item id="ball" src=ball.gltf></a-asset-item>
+  <a-asset-item id="ball" src="ball.gltf"></a-asset-item>
 </a-assets>
 <!-- use your gltf model -->
 <a-entity gltf-model="ball"></a-entity>
+
+
+
+</a-scene>
+
+
 
 
 
