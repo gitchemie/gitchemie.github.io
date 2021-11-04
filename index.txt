@@ -12,29 +12,22 @@ Starting point - https://medium.com/arjs/augmented-reality-in-10-lines-of-html-4
 	<!--<a-sky></a-sky>-->
 						<!--example here is helpful https://github.com/ngokevin/kframe/blob/master/components/aabb-collider/examples/basic/index.html--> 
 		<a-marker preset='hiro' id="hiro">
-
-
-			<a-entity gltf-model="assets/images/ball.gltf" scale="0.2 0.2 0.2"></a-entity>
-								
+			<A-sphere id = "hiro-object" position='0 1 0' color="blue"  material='opacity: 1; metalness: .5' radius="1" aabb-collider="objects: #kanji-object" 
+								event-set__hitstart="material.color: yellow"
+								event-set__hitend="material.color: blue"
 								event-set__otherstart="_event: hitstart; _target: #kanji-object; material.color: green; "
 								event-set__otherend="_event: hitend; _target: #kanji-object; material.color: pink;"
 								
 								></A-sphere><!--above shows that you can affect another element--><!--event-set__skystart="_event: hitstart; _target: sky; material.color: green"
 								event-set__skyend="_event: hitend; _target: sky; material.opacity: 0"-->
-			                                        <!-- adding a src on collision, the src is there from the beginning-->
-                                                                <!-- the material color changes when the entity hits the edge of the widnow-->
-		                                                </a-marker>
-		
-		<a-marker preset='kanji' id="kanji">
-      <a-sphere id="kanji-object" color="pink" radius="1
-" position="0 .25 0" aabb-collider="objects: #hiro-object" 
-								></a-sphere>
+			<!-- adding a src on collision, the src is there from the beginning-->
+<!-- the material color changes when the entity hits the edge of the widnow-->
 		</a-marker>
 		
-		
-		
-		
-		
+		<a-marker preset='kanji' id="kanji">
+      <a-sphere id="kanji-object" color="pink" radius="1" position="0 .25 0" aabb-collider="objects: #hiro-object" 
+								></a-sphere>
+		</a-marker>
 		
 		<a-entity camera></a-entity>
 	</a-scene>
